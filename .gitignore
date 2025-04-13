@@ -4,4 +4,6 @@
 
 /obj
 /.vs
-/Templates/AmmTemplate/.vs/AmmTemplate
+**/.vs
+**/bin
+**/obj

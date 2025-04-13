@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="AmmFramework.EndPoints.Web" Version="1.0.1" />
+
+    <!--<PackageReference Include="AmmFramework.Extensions.Caching.Distributed.Sql" Version="1.0.0" />-->
+    <!--<PackageReference Include="AmmFramework.Extensions.Caching.InMemory" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.Events.PollingPublisher" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.Events.PollingPublisher.Dal.Dapper" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.MessageBus.RabbitMQ" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.MessageBus.MessageInbox" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.MessageBus.MessageInbox.Dal.Dapper" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.ObjectMappers.AutoMapper" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.Serializers.Microsoft" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.Translations.Parrot" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Extensions.UsersManagement" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Utilities.ScalarRegistration" Version="1.0.0" />
+    <PackageReference Include="AmmFramework.Utilities.SoftwarePartDetector" Version="1.0.0" />-->
+    <!--<PackageReference Include="AmmFramework.Utilities.SerilogRegistration" Version="1.0.0" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\1.Core\AmmTemplate.Core.ApplicationService\AmmTemplate.Core.ApplicationService.csproj" />
+    <ProjectReference Include="..\..\..\2.Infra\Data\Sql\AmmTemplate.Infra.Data.Sql.Commands\AmmTemplate.Infra.Data.Sql.Commands.csproj" />
+    <ProjectReference Include="..\..\..\2.Infra\Data\Sql\AmmTemplate.Infra.Data.Sql.Queries\AmmTemplate.Infra.Data.Sql.Queries.csproj" />
+  </ItemGroup>
+
+</Project>
