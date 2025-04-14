@@ -1,9 +1,9 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Alireza Mirjalili",
+  "author": "Ali Mirjalili",
   "classifications": [ "Common", "Solution", "Amm" ],
   "identity": "Amm.Default.SolutionTemplate.CSharp",
-  "name": "Zamin Default Solution Template",
+  "name": "Amm Default Solution Template",
   "shortName": "Ammsln",
   "sourceName": "AmmTemplate",
   "tags": {

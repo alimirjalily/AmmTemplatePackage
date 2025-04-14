@@ -1,23 +1,16 @@
-var builder = WebApplication.CreateBuilder(args);
+using AmmFramework.Utilities.SerilogRegistration.Extensions;
+using AmmFramework.Utilities.SerilogRegistration.Extensions.DependencyInjection;
+using AmmTemplate.Endpoints.API.Extensions;
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+SerilogExtensions.RunWithSerilogExceptionHandling(() =>
 {
-    app.MapOpenApi();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
+    var builder = WebApplication.CreateBuilder(args);
+    var app = builder.AddFrameworkSerilog(o =>
+    {
+        o.ApplicationName = builder.Configuration.GetValue<string>("ApplicationName");
+        o.ServiceId = builder.Configuration.GetValue<string>("ServiceId");
+        o.ServiceName = builder.Configuration.GetValue<string>("ServiceName");
+        o.ServiceVersion = builder.Configuration.GetValue<string>("ServiceVersion");
+    }).ConfigureServices().ConfigurePipeline();
+    app.Run();
+});
